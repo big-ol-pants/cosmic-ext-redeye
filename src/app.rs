@@ -7,6 +7,8 @@ use cosmic::prelude::*;
 use cosmic::surface::action::{app_popup, destroy_popup};
 use cosmic::widget::{self};
 
+const APPLET_ICON: &[u8] = include_bytes!("../resources/icons/hicolor/scalable/apps/Redeye.svg");
+
 pub struct App {
     core: Core,
     popup: Option<Id>,
@@ -77,16 +79,11 @@ impl cosmic::Application for App {
     }
 
     fn view(&self) -> Element<'_, Self::Message> {
-        let icon_name = if self.value > 0.0 {
-            "night-light-symbolic"
-        } else {
-            "night-light-disabled-symbolic"
-        };
         let have_popup = self.popup;
         let button = self
             .core
             .applet
-            .icon_button(icon_name)
+            .icon_button_from_handle(widget::icon::from_svg_bytes(APPLET_ICON).symbolic(true))
             .on_press_with_rectangle(move |offset, bounds| {
                 if let Some(id) = have_popup {
                     Message::Surface(destroy_popup(id))

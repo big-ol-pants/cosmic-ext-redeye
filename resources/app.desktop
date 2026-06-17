@@ -2,7 +2,7 @@
 Name=Cosmic Ext Redeye
 Comment=Blue light filter controls
 Type=Application
-Icon=night-light-symbolic
+Icon=Redeye
 Exec=cosmic-ext-redeye
 Terminal=false
 StartupNotify=true

@@ -6,7 +6,7 @@
   <name>Cosmic Ext Redeye</name>
   <summary>Blue light filter controls</summary>
   <icon type="remote" width="64" height="64" scale="1">
-    https://github.com/big-ol-pants/cosmic-ext-redeye/raw/main/resources/icons/hicolor/scalable/apps/icon.svg
+    https://github.com/big-ol-pants/cosmic-ext-redeye/raw/main/resources/icons/hicolor/scalable/apps/Redeye.svg
   </icon>
   <url type="vcs-browser">https://github.com/big-ol-pants/cosmic-ext-redeye</url>
   <launchable type="desktop-id">io.github.big-ol-pants.CosmicExtRedeye.desktop</launchable>

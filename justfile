@@ -14,16 +14,20 @@ cargo-target-dir := env('CARGO_TARGET_DIR', 'target')
 appdata := appid + '.metainfo.xml'
 # Application's desktop entry
 desktop := appid + '.desktop'
+# Application icon
+icon := 'Redeye.svg'
 
 # Install destinations
 base-dir := absolute_path(clean(rootdir / prefix))
 appdata-dst := base-dir / 'share' / 'appdata' / appdata
 bin-dst := base-dir / 'bin' / name
 desktop-dst := base-dir / 'share' / 'applications' / desktop
+icon-dst := base-dir / 'share' / 'icons' / 'hicolor' / 'scalable' / 'apps' / icon
 user-base-dir := env('HOME') / '.local'
 user-appdata-dst := user-base-dir / 'share' / 'metainfo' / appdata
 user-bin-dst := user-base-dir / 'bin' / name
 user-desktop-dst := user-base-dir / 'share' / 'applications' / desktop
+user-icon-dst := user-base-dir / 'share' / 'icons' / 'hicolor' / 'scalable' / 'apps' / icon
 
 # Default recipe which runs `just build-release`
 default: build-release
@@ -65,20 +69,22 @@ install:
     install -Dm0755 {{ cargo-target-dir / 'release' / name }} {{bin-dst}}
     install -Dm0644 resources/app.desktop {{desktop-dst}}
     install -Dm0644 resources/app.metainfo.xml {{appdata-dst}}
+    install -Dm0644 {{ 'resources/icons/hicolor/scalable/apps' / icon }} {{icon-dst}}
 
 # Installs files for the current user so COSMIC Panel can discover the applet during development
 install-user: build-release
     install -Dm0755 {{ cargo-target-dir / 'release' / name }} {{user-bin-dst}}
     install -Dm0644 resources/app.desktop {{user-desktop-dst}}
     install -Dm0644 resources/app.metainfo.xml {{user-appdata-dst}}
+    install -Dm0644 {{ 'resources/icons/hicolor/scalable/apps' / icon }} {{user-icon-dst}}
 
 # Uninstalls installed files
 uninstall:
-    rm -f {{bin-dst}} {{desktop-dst}} {{appdata-dst}}
+    rm -f {{bin-dst}} {{desktop-dst}} {{appdata-dst}} {{icon-dst}}
 
 # Uninstalls current-user development files
 uninstall-user:
-    rm -f {{user-bin-dst}} {{user-desktop-dst}} {{user-appdata-dst}}
+    rm -f {{user-bin-dst}} {{user-desktop-dst}} {{user-appdata-dst}} {{user-icon-dst}}
 
 # Vendor dependencies locally
 vendor:
