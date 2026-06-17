@@ -118,7 +118,7 @@ impl cosmic::Application for App {
 
         Element::from(self.core.applet.applet_tooltip::<Message>(
             button,
-            "Blue light filter",
+            "Redeye",
             self.popup.is_some(),
             Message::Surface,
             None,
