@@ -1,0 +1,15 @@
+[Desktop Entry]
+Name=Cosmic Ext Redeye
+Comment=Blue light filter controls
+Type=Application
+Icon=night-light-symbolic
+Exec=cosmic-ext-redeye
+Terminal=false
+StartupNotify=true
+NoDisplay=true
+Categories=COSMIC;
+Keywords=COSMIC;Applet;Blue Light;Night Light;Display;Color;
+X-CosmicApplet=true
+X-CosmicShrinkable=true
+X-CosmicHoverPopup=Auto
+X-OverflowPriority=10
