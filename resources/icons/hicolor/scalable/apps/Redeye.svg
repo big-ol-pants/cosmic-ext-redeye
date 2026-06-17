@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="Redeye moon icon">
+  <!-- Moon body -->
+  <path d="M82 112
+       C50 112 24 86 24 54
+       C24 31 38 12 58 5
+       C52 14 49 25 49 37
+       C49 65 71 87 99 87
+       C106 87 113 86 119 83
+       C109 101 97 112 82 112Z" fill="#FFFFFF"></path>
+
+  <!-- Subtle inner glow -->
+  <path d="M72 101
+       C47 96 32 75 32 53
+       C32 37 40 23 52 14
+       C47 24 45 34 46 43
+       C48 71 72 94 101 94
+       C93 101 83 104 72 101Z" fill="#FFFFFF" opacity="0.28"></path>
+</svg>
